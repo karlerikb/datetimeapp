@@ -1,0 +1,36 @@
+@import "../../sass/variables";
+
+:host {
+  // background: cornflowerblue; // testing
+  border-radius: .3rem;
+  border: 1px solid rgba($primary-tone-4, .5);
+  padding: 1rem 0;
+  width: 90%;
+  background: $primary-tone-2;
+  box-shadow: 0 0 .8rem rgba($primary-tone-4, .2);
+  display: block;
+}
+
+.calendar-bar {
+  border-bottom: 1px solid rgba($primary-tone-4, .1);
+  padding: 0 1rem 1rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  // background: chartreuse;
+}
+
+.selection-field {
+  font-size: 1.5rem;
+}
+
+.calendar {
+  // background: cornsilk; // testing
+
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: .6rem;
+  justify-items: center;
+  align-items: center;
+}

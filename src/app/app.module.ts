@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { DateTimeInputComponent } from './date-time-input/date-time-input.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarDayComponent } from './calendar/calendar-day/calendar-day.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DateTimeInputComponent,
-    CalendarComponent
+    CalendarComponent,
+    CalendarDayComponent
   ],
   imports: [
     BrowserModule

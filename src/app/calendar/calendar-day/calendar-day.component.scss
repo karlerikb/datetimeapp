@@ -1,0 +1,16 @@
+@import "../../../sass/variables";
+
+.calendar-day {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: .3rem;
+  border: 1px solid rgba($primary-tone-3, .5);
+  box-shadow: 0 0 .8rem rgba($primary-tone-3, .2);
+  width: 7rem;
+  height: 7rem;
+  background: $primary-tone-2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  cursor: pointer;
+}
