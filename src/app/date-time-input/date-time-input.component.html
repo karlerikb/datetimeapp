@@ -1,25 +1,25 @@
 <div class="date-input">
   <div class="form-field">
     <label for="day" class="form-field__label">Day</label>
-    <input type="text" id="day" class="form-field__input" placeholder="Day">
+    <input type="text" id="day" class="form-field__input" [value]="date.day" (input)="onDayInput()" placeholder="Day" #dayInput>
   </div>
   <div class="form-field">
     <label for="month" class="form-field__label">Month</label>
-    <input type="text" id="month" class="form-field__input" placeholder="Month">
+    <input type="text" id="month" class="form-field__input" [value]="date.month" (input)="onMonthInput()" placeholder="Month" #monthInput>
   </div>
   <div class="form-field">
     <label for="year" class="form-field__label">Year</label>
-    <input type="text" id="year" class="form-field__input" placeholder="Year">
+    <input type="text" id="year" class="form-field__input" [value]="date.year" (input)="onYearInput()" placeholder="Year" #yearInput>
   </div>
 </div>
 
 <div class="time-input">
   <div class="form-field">
     <label for="hours" class="form-field__label">Hours</label>
-    <input type="text" id="hours" class="form-field__input" placeholder="Hours">
+    <input type="text" id="hours" class="form-field__input" [value]="date.hours" placeholder="Hours" #hoursInput>
   </div>
   <div class="form-field">
     <label for="minutes" class="form-field__label">Minutes</label>
-    <input type="text" id="minutes" class="form-field__input" placeholder="Minutes">
+    <input type="text" id="minutes" class="form-field__input" [value]="date.minutes" placeholder="Minutes" #minutesInput>
   </div>
 </div>

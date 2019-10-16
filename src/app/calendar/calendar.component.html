@@ -8,26 +8,5 @@
 </div>
 
 <div class="calendar">
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
-  <app-calendar-day></app-calendar-day>
+  <app-calendar-day *ngFor="let day of days" [date]="day"></app-calendar-day>
 </div>

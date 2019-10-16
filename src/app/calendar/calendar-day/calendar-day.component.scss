@@ -6,11 +6,29 @@
   border-radius: .3rem;
   border: 1px solid rgba($primary-tone-3, .5);
   box-shadow: 0 0 .8rem rgba($primary-tone-3, .2);
-  width: 7rem;
-  height: 7rem;
+  width: 6.9rem;
+  height: 6.9rem;
   background: $primary-tone-2;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   cursor: pointer;
+
+  &--last-month,
+  &--next-month {
+    background: rgba($primary-tone-3, .5);
+    cursor: not-allowed;
+  }
+
+  &--current-month {
+    transition: all .2s;
+
+    &:hover {
+      box-shadow: 0 0 1.2rem rgba($primary-tone-4, .75);
+    }
+  }
+}
+
+.highlighted {
+  background: orange;
 }
