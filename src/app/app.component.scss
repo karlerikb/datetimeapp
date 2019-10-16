@@ -4,12 +4,10 @@
   padding: 2.5rem 1.5rem;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .form {
-  // background: orange; // testing
-
-  // width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,5 +32,50 @@
 
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    border: 1px solid rgba($primary-tone-3, .5);
+    background: rgba($primary-tone-3, .8);
+    color: rgba($primary-tone-4, .5);
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: 0 0 .8rem rgba($primary-tone-4, .5);
+    }
+  }
+}
+
+.msg {
+  border-radius: .3rem;
+  border: 1px solid rgba($primary-tone-4, .5);
+  padding: 1.5rem 2.5rem;
+
+  box-shadow: 0 0 .8rem rgba($primary-tone-4, .5);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 10vh;
+  right: 1vw;
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  &__body {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  &.success {
+    color: #344920;
+    background: #a6eb62;
+  }
+
+  &.error {
+    color: #380f0f;
+    background: #eb6262;
   }
 }

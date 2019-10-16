@@ -32,6 +32,8 @@ export class DateTimeInputComponent implements OnInit, OnDestroy {
     this.dateSelectedSubscription = this.dateTimeService.dateSelected.subscribe((selectedDate) => {
       if (selectedDate.valid) {
         this.constructDate(this.dateTimeService.activeDate);
+      } else {
+        this.date.day = null;
       }
     });
   }
@@ -42,17 +44,11 @@ export class DateTimeInputComponent implements OnInit, OnDestroy {
     if (inputsEntered && inputRangesAreValid) {
       this.updateActiveDate();
       this.dateTimeService.dateInput.next({ valid: true });
+      this.dateTimeService.validDate.next(true);
     } else {
       this.dateTimeService.dateInput.next({ valid: false });
+      this.dateTimeService.validDate.next(false);
     }
-  }
-
-  onMonthInput() {
-    console.log('Month input');
-  }
-
-  onYearInput() {
-    console.log('Year input');
   }
 
   private initDate() {

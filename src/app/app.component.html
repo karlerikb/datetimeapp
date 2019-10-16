@@ -1,5 +1,11 @@
 <form class="form">
   <app-date-time-input></app-date-time-input>
   <app-calendar></app-calendar>
-  <a class="btn" (click)="onSubmit()">Submit</a>
+  <button class="btn" type="button" (click)="onSubmit()" [disabled]="!validDate">Submit</button>
 </form>
+
+<div class="msg" *ngIf="message.shown" [ngClass]="{ error: errorMsg, success: successMsg }">
+  <span class="msg__title">{{ message.title }}</span>
+  <span class="msg__body">{{ message.body }}</span>
+</div>
+

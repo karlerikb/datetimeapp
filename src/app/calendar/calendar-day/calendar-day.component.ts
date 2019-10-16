@@ -34,8 +34,10 @@ export class CalendarDayComponent implements OnInit, OnDestroy {
     if (currentMonth) {
       this.updateActiveDate();
       this.dateTimeService.dateSelected.next({ valid: true });
+      this.dateTimeService.validDate.next(true);
     } else {
       this.dateTimeService.dateSelected.next({ valid: false });
+      this.dateTimeService.validDate.next(false);
     }
   }
 
