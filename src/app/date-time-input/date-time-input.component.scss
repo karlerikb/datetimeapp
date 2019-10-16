@@ -1,0 +1,42 @@
+@import "../../sass/variables";
+
+:host {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  display: flex;
+
+  background: chocolate; // testing
+}
+
+.form-field {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    border-radius: .3rem;
+    border: 1px solid rgba($primary-tone-4, .5);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 8.5rem;
+    box-shadow: 0 0 .8rem rgba($primary-tone-4, .2);
+    background: $primary-tone-1;
+    transition: all .2s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 1.2rem rgba($primary-tone-4, .75);
+    }
+  }
+
+  &__label {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+.date-input, .time-input {
+  margin: 0 2rem;
+  display: flex;
+}
