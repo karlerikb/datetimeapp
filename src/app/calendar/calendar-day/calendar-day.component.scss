@@ -1,11 +1,11 @@
 @import "../../../sass/variables";
+@import "../../../sass/mixins";
 
 .calendar-day {
+  @include border-and-shadow($primary-tone-3, .2);
+
   padding: 1rem;
   font-size: 1.2rem;
-  border-radius: .3rem;
-  border: 1px solid rgba($primary-tone-3, .5);
-  box-shadow: 0 0 .8rem rgba($primary-tone-3, .2);
   width: 6.9rem;
   height: 6.9rem;
   background: $primary-tone-2;
@@ -21,14 +21,14 @@
   }
 
   &--current-month {
-    transition: all .2s;
+    @include transition;
 
     &:hover {
-      box-shadow: 0 0 1.2rem rgba($primary-tone-4, .75);
+      @include hover-shadow;
     }
   }
 }
 
 .highlighted {
-  background: orange;
+  background: $orange-tone;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DateTimeService } from './shared/date-time.service';
 
@@ -7,7 +7,7 @@ import { DateTimeService } from './shared/date-time.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   validDate = true;
   successMsg = false;
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       () => {
         this.errorMsg = true;
         this.successMsg = false;
-        this.showErrorMessage('Submitting date to server failed.');
+        this.showErrorMessage('Submitting the date to server failed.');
       }
     );
   }
@@ -66,5 +66,9 @@ export class AppComponent implements OnInit {
     this.message.shown = false;
     this.message.title = '';
     this.message.body = '';
+  }
+
+  ngOnDestroy() {
+    this.validDateSubscription.unsubscribe();
   }
 }

@@ -53,8 +53,7 @@ export class CalendarDayComponent implements OnInit, OnDestroy {
   }
 
   private initDaySelection() {
-    const validDate = this.validateDate(this.date, this.dateTimeService.activeDate);
-    this.daySelected = validDate;
+    this.daySelected = this.validateDate(this.date, this.dateTimeService.activeDate);
   }
 
   private updateActiveDate() {
@@ -62,6 +61,8 @@ export class CalendarDayComponent implements OnInit, OnDestroy {
     selectedDate.setDate(this.date.getDate());
     selectedDate.setMonth(this.date.getMonth());
     selectedDate.setFullYear(this.date.getFullYear());
+    selectedDate.setHours(this.dateTimeService.activeDate.getHours());
+    selectedDate.setMinutes(this.dateTimeService.activeDate.getMinutes());
     this.dateTimeService.activeDate = selectedDate;
   }
 

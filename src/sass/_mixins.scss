@@ -1,0 +1,19 @@
+@mixin border-and-shadow($color, $shadow-opacity) {
+  border-radius: .3rem;
+  border: 1px solid rgba($color, .5);
+  box-shadow: 0 0 .8rem rgba($color, $shadow-opacity);
+}
+
+@mixin color-and-background($color, $background) {
+  color: $color;
+  background: $background;
+}
+
+@mixin hover-shadow {
+  outline: none;
+  box-shadow: 0 0 1.2rem rgba($primary-tone-4, .75);
+}
+
+@mixin transition {
+  transition: all .2s;
+}

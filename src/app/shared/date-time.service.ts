@@ -20,7 +20,7 @@ export class DateTimeService {
       const randomNum = Math.random();
       if (randomNum >= 0.33 ) {
         // "sending" data ...
-        const data = JSON.stringify(this.activeDate.toUTCString());
+        const data = JSON.stringify({ date: this.activeDate.toUTCString() });
         console.log(data);
 
         observer.next();

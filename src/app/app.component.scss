@@ -1,4 +1,5 @@
 @import "./../sass/variables";
+@import "./../sass/mixins";
 
 :host {
   padding: 2.5rem 1.5rem;
@@ -14,20 +15,17 @@
 }
 
 .btn {
-  border: 1px solid rgba($primary-tone-4, .5);
-  border-radius: .3rem;
+  @include border-and-shadow($primary-tone-4, .5);
+  @include color-and-background($primary-tone-1, $green-tone-2);
+  @include transition;
   padding: 1rem 2.5rem;
-  color: #f5f5f5;
   font-size: 1.5rem;
   text-align: center;
-  background: #3db65d;
-  box-shadow: 0 0 .8rem rgba($primary-tone-4, .5);
-  width: 25%;
-  transition: all .2s;
+  width: 20%;
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 1.2rem rgba($primary-tone-4, .75);
+    @include hover-shadow;
   }
 
   &:focus {
@@ -35,9 +33,8 @@
   }
 
   &:disabled {
+    @include color-and-background(rgba($primary-tone-4, .5), rgba($primary-tone-3, .8));
     border: 1px solid rgba($primary-tone-3, .5);
-    background: rgba($primary-tone-3, .8);
-    color: rgba($primary-tone-4, .5);
     cursor: not-allowed;
 
     &:hover {
@@ -47,11 +44,8 @@
 }
 
 .msg {
-  border-radius: .3rem;
-  border: 1px solid rgba($primary-tone-4, .5);
+  @include border-and-shadow($primary-tone-4, .2);
   padding: 1.5rem 2.5rem;
-
-  box-shadow: 0 0 .8rem rgba($primary-tone-4, .5);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -70,12 +64,10 @@
   }
 
   &.success {
-    color: #344920;
-    background: #a6eb62;
+    @include color-and-background($green-tone-3, $green-tone-1);
   }
 
   &.error {
-    color: #380f0f;
-    background: #eb6262;
+    @include color-and-background($red-tone-2, $red-tone-1);
   }
 }

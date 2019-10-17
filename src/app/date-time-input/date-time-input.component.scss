@@ -1,11 +1,10 @@
 @import "../../sass/variables";
+@import "../../sass/mixins";
 
 :host {
   margin: 2rem 0;
   padding: 1rem 0;
   display: flex;
-
-  // background: chocolate; // testing
 }
 
 .form-field {
@@ -14,19 +13,20 @@
   flex-direction: column;
 
   &__input {
-    border-radius: .3rem;
-    border: 1px solid rgba($primary-tone-4, .5);
+    @include border-and-shadow($primary-tone-4, .2);
+    @include transition;
     padding: 1rem;
     font-size: 1.5rem;
     text-align: center;
     width: 8.5rem;
-    box-shadow: 0 0 .8rem rgba($primary-tone-4, .2);
     background: $primary-tone-1;
-    transition: all .2s;
+
+    &--number {
+      padding-left: 2.2rem;
+    }
 
     &:focus {
-      outline: none;
-      box-shadow: 0 0 1.2rem rgba($primary-tone-4, .75);
+      @include hover-shadow;
     }
   }
 

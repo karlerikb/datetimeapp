@@ -38,10 +38,10 @@ export class DateTimeInputComponent implements OnInit, OnDestroy {
     });
   }
 
-  onDayInput() {
-    const inputsEntered = this.validateInputsEntered();
-    const inputRangesAreValid = this.validateInputsRanges();
-    if (inputsEntered && inputRangesAreValid) {
+  onDateInput() {
+    const selectedDateValid = this.validateDateTime();
+
+    if (selectedDateValid) {
       this.updateActiveDate();
       this.dateTimeService.dateInput.next({ valid: true });
       this.dateTimeService.validDate.next(true);
@@ -80,20 +80,12 @@ export class DateTimeInputComponent implements OnInit, OnDestroy {
     };
   }
 
-  private validateInputsEntered(): boolean {
-    const inputs = this.getDateInputs();
-    return Boolean(inputs.day && inputs.month && inputs.year);
-  }
-
-  private validateInputsRanges(): boolean {
-    const inputs = this.getDateInputs();
+  private validateDateTime(): boolean {
+    const selectedDate = this.constructedDate;
     const activeDate = this.dateTimeService.activeDate;
-    const lastOfMonth = new Date(activeDate.getFullYear(), activeDate.getMonth() + 1, 0).getDate();
-
-    const dayInputIsValid = Boolean(inputs.day >= 1 && inputs.day <= lastOfMonth);
-    const monthInputIsValid = Boolean(inputs.month >= 1 && inputs.month <= 12);
-    const yearInputIsValid = Boolean(inputs.year >= 2018 && inputs.year <= 2020);
-    return Boolean(dayInputIsValid && monthInputIsValid && yearInputIsValid);
+    const withinCurrentMonth = Boolean(selectedDate.getMonth() === activeDate.getMonth());
+    const withinCurrentYear = Boolean(selectedDate.getFullYear() === activeDate.getFullYear());
+    return Boolean(selectedDate && withinCurrentMonth && withinCurrentYear);
   }
 
   private get constructedDate(): Date {
