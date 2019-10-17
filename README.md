@@ -2,26 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
-## Development server
+## Instructions to get the app running
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisites
 
-## Code scaffolding
+0. ([Node.js](https://nodejs.org/en/) is required)
+1. Install Angular CLI `npm uninstall -g @angular/cli`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Getting the app
 
-## Build
+2. Clone this repository (`git clone https://github.com/karlerikb/datetimeapp.git`)
+3. Navigate to the generated project folder `cd datetimeapp`
+4. Install dependencies `npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Running in development mode
 
-## Running unit tests
+5. Run development server `ng serve`
+6. Navigate to `http://localhost:4200/`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Building the application
 
-## Running end-to-end tests
+7. Build the application `ng build --prod`
+8. The built application is in `dist/` directory
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Description
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Application allows to **select a date and a time from the current month** and **submit it as an UTC-formatted date**
+* Selecting different months or years is disabled, but if a week has days from both the current month and from the previous or next month, then they will be displayed
+* If those dates which aren't part of the current month are selected, an error is displayed and the submit button is disabled
+* When a date is submitted, either an error is shown (to mock an error when sending a request to the server), or a success message is shown and in which case the date is logged to the console
+* For simplicity purposes the error or success of the submit is determined by an RNG
