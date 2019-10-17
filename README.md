@@ -11,7 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Getting the app
 
-2. Clone this repository (`git clone https://github.com/karlerikb/datetimeapp.git`)
+2. Clone the current repository (`git clone https://github.com/karlerikb/datetimeapp.git`)
 3. Navigate to the generated project folder `cd datetimeapp`
 4. Install dependencies `npm install`
 
